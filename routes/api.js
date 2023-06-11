@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const utils = require('../utils/Utils');
 const users = require('../models/users')
-
+const firebaseController = require("../controllers/firebaseController");
 router.post('/register', async(req, res) => {
 
 	if(!req.body.email || !req.body.password) 
@@ -88,5 +88,7 @@ router.get('/logout', async(req, res, next) => {
 	
 	res.end();
 });
+
+router.post('/postUserData', firebaseController.postUserData)
 
 module.exports = router;
