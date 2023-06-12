@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const utils = require('../utils/Utils');
 const users = require('../models/users')
 const firebaseController = require("../controllers/firebaseController");
+const generateDataController = require("../controllers/generateDataController");
 router.post('/register', async(req, res) => {
 
 	if(!req.body.email || !req.body.password) 
@@ -89,6 +90,7 @@ router.get('/logout', async(req, res, next) => {
 	res.end();
 });
 
-router.post('/postUserData', firebaseController.postUserData)
+router.post('/postUserData', firebaseController.postUserData);
+router.post('/getData', generateDataController.generateData);
 
 module.exports = router;
