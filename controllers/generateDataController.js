@@ -1,22 +1,20 @@
+const axios = require('axios');
 module.exports = {
 
-  generateData: function (req, res) {
+  getData: async function (userId, deviceId) {
     try {
-      const { userId, deviceId } = req.body;
-      const voltage = Math.floor(Math.random() * (600 - 50 + 1)) + 50;
-      res.status(200).json({
+      const response = await axios.post(`http://${process.env.NODE_IP}/getData/${deviceId}`, {
         userId,
-        deviceId,
-        voltage,
-        dateTime: Date(),
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(400).json({
-        error: true,
-        message: error.message
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
+      console.log(response.data)
+      const concentrationValue = -387 * response.data + 152;
+      return concentrationValue.toFixed(1);
+    } catch (error) {
+      return error;
     }
-  },
+  }
 
 };

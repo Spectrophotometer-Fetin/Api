@@ -2,43 +2,27 @@ const sequelize = require('sequelize');
 const { Sequelize } = require('sequelize');
 const db = require('./db');
 
-const Users = db.define('Users', {
+const News = db.define('news', {
     id:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
-    name: {
+    title:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    email:{
+    url:{
         type: Sequelize.STRING,
         allowNull: false
     },
-    password:{
+    image:{
         type: Sequelize.STRING,
         allowNull: false
-    },
-    height:{
-        type: Sequelize.STRING,
-        allowNull: true
-    },
-    weight:{
-        type: Sequelize.STRING,
-        allowNull: true
-    },
-    age:{
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    gender:{
-        type: Sequelize.STRING,
-        allowNull: false
-    },
+    }
 });
 
 //Criar tabela 
-Users.sync();
-module.exports = Users; 
+News.sync();
+module.exports = News; 
