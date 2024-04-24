@@ -22,9 +22,11 @@ About the code.</br>
 How to use:
 Create the database called "especto" and execute the codes inside the dump-database folder.
 
+Change the NODE_IP value on .env file. Get the new IP from the arduino IDE monitor serial
+
 Run ``` npm install ```
 
 Run ``` npm run dev ```
 
-Change the NODE_IP value on .env file. Get the new IP from the arduino IDE monitor serial
+
 </p>
