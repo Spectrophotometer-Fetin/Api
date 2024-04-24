@@ -19,5 +19,10 @@ About the code.</br>
 </p>
 <p align="left" id="Tut">
 <h2>How to use</h2></br>
-How to use.
+How to use:
+Create the database called "especto" and execute the codes inside the dump-database folder.
+
+Run ``` npm install ```
+
+Run ``` npm run dev ```
 </p>
