@@ -25,4 +25,6 @@ Create the database called "especto" and execute the codes inside the dump-datab
 Run ``` npm install ```
 
 Run ``` npm run dev ```
+
+Change the NODE_IP value on .env file. Get the new IP from the arduino IDE monitor serial
 </p>
