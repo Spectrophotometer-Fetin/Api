@@ -4,7 +4,6 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const utils = require('../utils/Utils');
 const users = require('../models/users')
-const firebaseController = require("../controllers/firebaseController");
 const generateDataController = require("../controllers/generateDataController");
 const userDataController = require("../controllers/userDataController");
 const newsController = require("../controllers/newsController");
@@ -108,7 +107,6 @@ router.post('/login', async (req, res) => {
 	})
 });
 
-router.post('/postUserData', firebaseController.postUserData);
 router.post('/getUserHistoric', userDataController.getUserHistoric);
 router.post('/saveUserData', userDataController.saveUserData);
 router.post('/getLastRecord', userDataController.lastRecord);

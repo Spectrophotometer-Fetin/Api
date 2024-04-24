@@ -9,7 +9,6 @@ const bodyParser = require('body-parser');
 const helmet = require("helmet");
 const path = require('path');
 const api = require('./routes/api');
-const firebaseController = require("./controllers/firebaseController");
 
 app.use(express.json());
 app.use(cors());
@@ -32,7 +31,6 @@ function startServer()
 {
     //Indicando servidor rodando 
     app.listen(process.env.PORT, () => {
-        firebaseController.initFirebase();
         console.log(`Servidor iniciado em http://${process.env.DB_HOST}:${process.env.PORT}/`);
     });
 }
